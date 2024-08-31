@@ -72,7 +72,7 @@ int main(int argc, char *argv[]){
             FileContent single_dtb = {
                 .filePath = new_dtb_name,
                 .fileBuffer = stack_dtb.fileBuffer,
-                .fileSize = header->dtb_size,
+                .fileSize = __builtin_bswap32(header->dtb_size),
             };
 
             write_file_content(&single_dtb);

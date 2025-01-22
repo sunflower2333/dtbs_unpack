@@ -71,7 +71,7 @@ int main(int argc, char *argv[]){
             sprintf(new_dtb_name, "%d.dtb", dtb_count);
             FileContent single_dtb = {
                 .filePath = new_dtb_name,
-                .fileBuffer = stack_dtb.fileBuffer,
+                .fileBuffer = stack_dtb.fileBuffer+address,
                 .fileSize = __builtin_bswap32(header->dtb_size),
             };
 
